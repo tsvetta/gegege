@@ -51,23 +51,23 @@ ReactDOM.render(
         routes={[
           {
             to: paths.city,
-            text: 'Город',
+            text: 'город',
           },
           {
             to: paths.people,
-            text: 'Человек',
+            text: 'человек',
           },
           {
             to: paths.studio,
-            text: 'Студия',
+            text: 'студия',
           },
           {
             to: paths.edition,
-            text: 'Издание',
+            text: 'издание',
           },
           {
             to: paths.abstract,
-            text: 'Абстракция',
+            text: 'абстракция',
           },
         ]}
       />

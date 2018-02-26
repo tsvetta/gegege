@@ -73,6 +73,12 @@ module.exports = {
           'file-loader',
         ],
       },
+      {
+        test: /\.(ttf|woff|woff(2))$/,
+        loader: [
+          'file-loader',
+        ],
+      },
     ],
   },
 };

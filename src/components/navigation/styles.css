@@ -3,6 +3,7 @@
 }
 
 .navigation {
+  padding-top: 20px;
   width: 200px;
   border-right: 1px solid #666;
 }
@@ -14,9 +15,11 @@
 }
 
 .item {
+  position: relative;
+
   & a {
     display: block;
-    padding: 20px;
+    padding: 3px 20px;
     text-decoration: none;
 
     &:visited {
@@ -27,5 +30,15 @@
 
   &:hover {
     background-color: #111;
+  }
+
+  &:last-child::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 70px;
+    height: 1px;
+    background-color: #fff;
   }
 }

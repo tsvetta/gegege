@@ -2,6 +2,23 @@
   --body-color: rgba(0, 0, 0, 0.87); /* TODO вынести в глобальные переменные*/
 }
 
+@font-face {
+  font-family: 'Century Gothic';
+  font-weight: regular;
+  src: url('./fonts/Century_Gothiс_regular.ttf');
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  font-weight: bold;
+  src: url('./fonts/Century_Gothic_bold.ttf');
+}
+
+@font-face {
+  font-family: 'Helvetica Light';
+  src: url('./fonts/Helvetica_Light.ttf');
+}
+
 html {
   min-height: 100%;
   height: 100%;
@@ -10,7 +27,8 @@ html {
 body {
   height: 100%;
   margin: 0;
-  font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  /* font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; */
+  font-family: 'Century Gothic', 'Helvetica Light', Arial, sans-serif;
   background-color: var(--body-color);
   color: #fff;
 }

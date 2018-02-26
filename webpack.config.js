@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const ENV_DEVELOPMENT = true;
+const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
 module.exports = {
   entry: './src/index.js',
@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: IS_PRODUCTION ? '/gegege/' : '/',
     path: path.resolve(__dirname, 'docs'),
   },
   plugins: [
@@ -26,8 +26,8 @@ module.exports = {
       template: './src/index.html',
     }),
     new CleanWebpackPlugin(['docs']),
-    ENV_DEVELOPMENT ? new webpack.NamedModulesPlugin() : null,
-    ENV_DEVELOPMENT ? new webpack.HotModuleReplacementPlugin() : null,
+    !IS_PRODUCTION && new webpack.NamedModulesPlugin(),
+    !IS_PRODUCTION && new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [

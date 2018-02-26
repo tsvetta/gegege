@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "npx webpack"
+    "build": "npx webpack -p"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
     "webpack-dev-server": "^3.0.0"
   },
   "dependencies": {
+    "babel-preset-env": "^1.6.1",
     "clean-webpack-plugin": "^0.1.18",
     "file-loader": "^1.1.9",
     "html-loader": "^0.5.5",

@@ -5,6 +5,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const IS_PRODUCTION = process.env.NODE_ENV === 'production';
 
+console.log(process.env.NODE_ENV);
+
 module.exports = {
   entry: './src/index.js',
   devServer: {
@@ -28,7 +30,7 @@ module.exports = {
     new CleanWebpackPlugin(['docs']),
     !IS_PRODUCTION && new webpack.NamedModulesPlugin(),
     !IS_PRODUCTION && new webpack.HotModuleReplacementPlugin(),
-  ],
+  ].filter(Boolean),
   module: {
     rules: [
       {

@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "npx webpack -p"
+    "build": "NODE_ENV=production webpack -p"
   },
   "repository": {
     "type": "git",

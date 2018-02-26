@@ -61,7 +61,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4dacfe94c29c1cc91525"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "890020d1b7570c644ba5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -716,7 +716,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -735,7 +735,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, ":root { /* TODO вынести в глобальные переменные*/\n}\n\nbody {\n  margin: 0;\n  font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\n  background-color: rgba(0, 0, 0, .87);\n  color: #fff;\n}\n\na {\n  color: #fff\n}\n\na:visited {\n color: #999;\n}\n\n.layout_1ZOEQ {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
+exports.push([module.i, ":root { /* TODO вынести в глобальные переменные*/\n}\n\nhtml {\n  min-height: 100%;\n  height: 100%;\n}\n\nbody {\n  height: 100%;\n  margin: 0;\n  font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;\n  background-color: rgba(0, 0, 0, .87);\n  color: #fff;\n}\n\n#app {\n  height: 100%;\n}\n\na {\n  color: #fff\n}\n\na:visited {\n color: #999;\n}\n\n.layout_1ZOEQ {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  height: 100%;\n}\n", ""]);
 
 // exports
 exports.locals = {
@@ -25036,7 +25036,7 @@ const routes = [{
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom__["render"](__WEBPACK_IMPORTED_MODULE_0_react__["createElement"](
   __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* BrowserRouter */],
-  null,
+  { basename: '/gegege' },
   __WEBPACK_IMPORTED_MODULE_0_react__["createElement"](
     'div',
     { className: __WEBPACK_IMPORTED_MODULE_8__common_css___default.a.layout },

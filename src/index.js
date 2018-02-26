@@ -45,7 +45,7 @@ const routes = [
 ];
 
 ReactDOM.render(
-  <Router>
+  <Router basename='/gegege'>
     <div className={styles.layout}>
       <Navigation
         routes={[

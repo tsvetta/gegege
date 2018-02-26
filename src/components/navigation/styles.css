@@ -1,0 +1,31 @@
+:root {
+  --body-color: rgba(0, 0, 0, 0.87); /* TODO вынести в глобальные переменные*/
+}
+
+.navigation {
+  width: 200px;
+  border-right: 1px solid #666;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  & a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+
+    &:visited {
+      color: #fff;
+    }
+
+  }
+
+  &:hover {
+    background-color: #111;
+  }
+}

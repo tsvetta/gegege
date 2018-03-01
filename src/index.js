@@ -12,6 +12,7 @@ import CityPage from './pages/city-page';
 import PeoplePage from './pages/people-page';
 import ErrorPage from './pages/error-page';
 
+import Layout from './components/layout';
 import Navigation from './components/navigation';
 
 import styles from './common.css';
@@ -25,7 +26,7 @@ const paths = {
   abstract: '/abstract',
 }
 
-const routes = [
+export const routes = [
   {
     path: paths.home,
     component: HomePage,
@@ -33,7 +34,10 @@ const routes = [
   },
   {
     path: paths.city,
-    component: CityPage
+    component: CityPage,
+    props: {
+      theme: 'night',
+    }
   },
   {
     path: paths.people,
@@ -46,39 +50,41 @@ const routes = [
 
 ReactDOM.render(
   <Router basename='/gegege'>
-    <div className={styles.layout}>
-      <Navigation
-        routes={[
-          {
-            to: paths.city,
-            text: 'город',
-          },
-          {
-            to: paths.people,
-            text: 'человек',
-          },
-          {
-            to: paths.studio,
-            text: 'студия',
-          },
-          {
-            to: paths.edition,
-            text: 'издание',
-          },
-          {
-            to: paths.abstract,
-            text: 'абстракция',
-          },
-        ]}
-      />
-      <main>
-        <Switch>
-          {routes.map((route, i) => (
-            <Route key={i} {...route} />
-          ))}
-        </Switch>
-      </main>
-    </div>
+    <Layout>
+      <div className={styles.layoutContent}>
+        <Navigation
+          routes={[
+            {
+              to: paths.city,
+              text: 'город',
+            },
+            {
+              to: paths.people,
+              text: 'человек',
+            },
+            {
+              to: paths.studio,
+              text: 'студия',
+            },
+            {
+              to: paths.edition,
+              text: 'издание',
+            },
+            {
+              to: paths.abstract,
+              text: 'абстракция',
+            },
+          ]}
+        />
+        <main>
+          <Switch>
+            {routes.map((route, i) => (
+              <Route key={i} {...route} />
+            ))}
+          </Switch>
+        </main>
+      </div>
+    </Layout>
   </Router>,
   document.getElementById('app')
 );

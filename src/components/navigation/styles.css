@@ -1,7 +1,3 @@
-:root {
-  --body-color: rgba(0, 0, 0, 0.87); /* TODO вынести в глобальные переменные*/
-}
-
 .navigation {
   padding-top: 20px;
   width: 200px;
@@ -15,30 +11,15 @@
 }
 
 .item {
-  position: relative;
+  font-family: var(--rubik-mono-font);
 
   & a {
     display: block;
     padding: 3px 20px;
     text-decoration: none;
-
-    &:visited {
-      color: #fff;
-    }
-
   }
 
   &:hover {
-    background-color: #111;
-  }
-
-  &:last-child::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 20px;
-    width: 70px;
-    height: 1px;
-    background-color: #fff;
+    background-color: var(--bg-hover-color-day);
   }
 }

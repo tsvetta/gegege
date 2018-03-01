@@ -1,18 +1,8 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.css';
-
-/* ::
-type Route = {
-  text: string,
-  to: string,
-}
-
-type Props = {
-  routes: Route,
-}
- */
 
 class Navigation extends React.PureComponent {
   render() {
@@ -32,6 +22,15 @@ class Navigation extends React.PureComponent {
       </nav>
     );
   }
+}
+
+Navigation.propTypes = {
+  routes: PropTypes.arrayOf(
+    PropTypes.shape({
+      text: PropTypes.string,
+      to: PropTypes.string,
+    })
+  ),
 }
 
 export default Navigation;

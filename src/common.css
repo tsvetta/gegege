@@ -1,22 +1,24 @@
-:root {
-  --body-color: rgba(0, 0, 0, 0.87); /* TODO вынести в глобальные переменные*/
-}
+:global(:root) {
+  --body-color: rgba(0, 0, 0, 0.87);
+  --rubik-mono-font: 'Rubik Mono One', Arial, Helvetica, sans-serif;
 
-@font-face {
-  font-family: 'Century Gothic';
-  font-weight: regular;
-  src: url('./fonts/Century_Gothiс_regular.ttf');
-}
+  --text-color-day: #000;
+  --bg-hover-color-day: #ddd;
+  --bg-color-day: #fff;
 
-@font-face {
-  font-family: 'Century Gothic';
-  font-weight: bold;
-  src: url('./fonts/Century_Gothic_bold.ttf');
+  --text-color-night: #fff;
+  --bg-hover-color-night: #333;
+  --bg-color-night: #000;
 }
 
 @font-face {
   font-family: 'Helvetica Light';
   src: url('./fonts/Helvetica_Light.ttf');
+}
+
+@font-face {
+  font-family: 'Rubik Mono One';
+  src: url('./fonts/RubikMonoOne_regular.ttf');
 }
 
 html {
@@ -27,24 +29,20 @@ html {
 body {
   height: 100vh;
   margin: 0;
-  font-family: 'Century Gothic', 'Helvetica Light', Arial, sans-serif;
-  background-color: var(--body-color);
-  color: #fff;
+  font-family: 'Helvetica Light', Arial, sans-serif;
 }
 
 :global(#app) {
   min-height: 100vh;
 }
 
-a {
-  color: #fff;
-
-  &:visited {
-    color: #999;
-  }
-}
-
-.layout {
+.layoutContent {
   display: flex;
   min-height: 100vh;
 }
+
+a {
+  color: var(--text-color-day);
+  transition: color 500ms ease;
+}
+

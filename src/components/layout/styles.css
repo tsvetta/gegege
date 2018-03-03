@@ -1,6 +1,6 @@
 .layout {
   background-color: var(--bg-color-day);
-  transition: background-color 500ms ease;
+  transition: background-color 1s ease;
 
   &.theme_night {
     background-color: var(--bg-color-night);

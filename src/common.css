@@ -43,6 +43,6 @@ body {
 
 a {
   color: var(--text-color-day);
-  transition: color 500ms ease;
+  transition: color 1s ease;
 }
 

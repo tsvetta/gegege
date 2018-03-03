@@ -1,15 +1,21 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
+import { withTheme } from '../../HOCs/with-theme';
+
 import styles from './styles.css';
+const cx = classnames.bind(styles);
 
 class Navigation extends React.PureComponent {
   render() {
     const { props } = this;
 
     return (
-      <nav className={styles.navigation}>
+      <nav className={cx('navigation', {
+        [`theme_${props.theme}`]: Boolean(props.theme),
+      })}>
         <ul className={styles.list}>
           {props.routes.map(route => (
             <li key={route.to} className={styles.item}>
@@ -27,10 +33,12 @@ class Navigation extends React.PureComponent {
 Navigation.propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
-      text: PropTypes.string,
-      to: PropTypes.string,
-    })
+      text: PropTypes.string.isRequired,
+      to: PropTypes.string.isRequired,
+    }).isRequired
   ),
+  theme: PropTypes.oneOf(['day', 'night']),
 }
 
-export default Navigation;
+
+export default withTheme(Navigation)

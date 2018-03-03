@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { withRouter } from 'react-router'
+import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
-import * as R from 'ramda';
-import { routes } from '../../';
+import { withTheme } from '../../HOCs/with-theme';
 
 import styles from './styles.css';
 const cx = classnames.bind(styles);
@@ -10,12 +9,10 @@ const cx = classnames.bind(styles);
 class Layout extends React.PureComponent {
   render() {
     const { props } = this;
-    const currentRouteData = routes.find(r => r.path === props.location.pathname);
-    const theme = R.path(['props', 'theme'], currentRouteData)
 
     return (
       <div className={cx('layout', {
-        [`theme_${theme}`]: Boolean(theme),
+        [`theme_${props.theme}`]: Boolean(props.theme),
       })}>
         {props.children}
       </div>
@@ -24,7 +21,7 @@ class Layout extends React.PureComponent {
 }
 
 Layout.propTypes = {
+  theme: PropTypes.oneOf(['day', 'night']),
+};
 
-}
-
-export default withRouter(Layout)
+export default withTheme(Layout)

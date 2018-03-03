@@ -1,5 +1,4 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import styles from './styles.css';
 
 class Page extends React.PureComponent {

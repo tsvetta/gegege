@@ -38,7 +38,7 @@ Navigation.propTypes = {
     }).isRequired
   ),
   theme: PropTypes.oneOf(['day', 'night']),
-}
+};
 
 
-export default withTheme(Navigation)
+export default withTheme(Navigation);

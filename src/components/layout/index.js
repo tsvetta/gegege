@@ -24,4 +24,4 @@ Layout.propTypes = {
   theme: PropTypes.oneOf(['day', 'night']),
 };
 
-export default withTheme(Layout)
+export default withTheme(Layout);

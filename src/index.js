@@ -24,7 +24,7 @@ const paths = {
   studio: '/studio',
   edition: '/edition',
   abstract: '/abstract',
-}
+};
 
 export const routes = [
   {
@@ -37,7 +37,7 @@ export const routes = [
     component: CityPage,
     props: {
       theme: 'night',
-    }
+    },
   },
   {
     path: paths.people,
@@ -45,7 +45,7 @@ export const routes = [
   },
   {
     component: ErrorPage,
-  }
+  },
 ];
 
 ReactDOM.render(

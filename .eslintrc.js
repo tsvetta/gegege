@@ -12,8 +12,11 @@ module.exports = {
     sourceType: 'module',
   },
   'plugins': [
-    'eslint:recommended',
     'react',
+  ],
+  'extends': [
+    'eslint:recommended',
+    'plugin:react/recommended'
   ],
   'rules': {
     'indent': ['error', 2],
@@ -62,7 +65,9 @@ module.exports = {
     'react/jsx-pascal-case': 2,
     'react/jsx-sort-prop-types': 0,
     'react/jsx-sort-props': 0,
-    'react/jsx-space-before-closing': 2,
+    'react/jsx-tag-spacing': [2, {
+      'beforeSelfClosing': 'always',
+    }],
     'react/jsx-uses-vars': 2,
     'react/jsx-filename-extension': [ 2, { 'extensions': [ '.js', '.jsx' ] } ],
     'react/jsx-wrap-multilines': [2, {
@@ -70,5 +75,10 @@ module.exports = {
       'assignment': true,
       'return': true
     }],
+
+    /**
+     * Style
+     */
+    'semi': [ 2, 'always' ],
   },
 };

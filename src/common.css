@@ -1,5 +1,5 @@
 :global(:root) {
-  --sidebar-width: 200px;
+  --sidebar-width: 300px;
   --scrollbar-width: 20px;
 
   --rubik-mono-font: 'Rubik Mono One', Arial, Helvetica, sans-serif;

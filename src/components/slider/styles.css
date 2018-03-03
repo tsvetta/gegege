@@ -19,7 +19,8 @@
   height: 100%;
   display: inline-block;
   margin: 0;
-  padding: 100px;
+  /* padding: 100px; */
+  padding: 1%;
   text-align: center;
 }
 

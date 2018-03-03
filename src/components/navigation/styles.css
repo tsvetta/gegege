@@ -1,6 +1,7 @@
 .navigation {
   padding-top: 20px;
-  width: 200px;
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
 
   &.theme_night {
     border-right: 1px solid #666;

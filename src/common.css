@@ -1,6 +1,10 @@
 :global(:root) {
-  --body-color: rgba(0, 0, 0, 0.87);
+  --sidebar-width: 200px;
+  --scrollbar-width: 20px;
+
   --rubik-mono-font: 'Rubik Mono One', Arial, Helvetica, sans-serif;
+
+  --body-color: rgba(0, 0, 0, 0.87);
 
   --text-color-day: #000;
   --bg-hover-color-day: #ddd;
@@ -9,6 +13,10 @@
   --text-color-night: #fff;
   --bg-hover-color-night: #333;
   --bg-color-night: #000;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -23,17 +31,20 @@
 
 html {
   min-height: 100vh;
-  height: 100vh;
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
   font-family: 'Helvetica Light', Arial, sans-serif;
 }
 
 :global(#app) {
   min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 .layoutContent {

@@ -55,12 +55,12 @@ ReactDOM.render(
         <Navigation
           routes={[
             {
-              to: paths.city,
-              text: 'город',
-            },
-            {
               to: paths.people,
               text: 'человек',
+            },
+            {
+              to: paths.city,
+              text: 'город',
             },
             {
               to: paths.studio,

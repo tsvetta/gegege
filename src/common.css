@@ -1,10 +1,10 @@
 :global(:root) {
-  --sidebar-width: 300px;
+  --sidebar-width: 235px;
   --scrollbar-width: 20px;
 
   --rubik-mono-font: 'Rubik Mono One', Arial, Helvetica, sans-serif;
 
-  --body-color: rgba(0, 0, 0, 0.87);
+  --body-color: rgba(0, 0, 0, 0.96);
 
   --text-color-day: #000;
   --bg-hover-color-day: #ddd;

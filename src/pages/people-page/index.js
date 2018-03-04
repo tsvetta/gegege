@@ -9,9 +9,9 @@ class PeoplePage extends React.PureComponent {
     return (
       <Page>
         <Slider>
-          <Photo src={require('../../photos/people/000000000001.jpg')} />
-          <Photo src={require('../../photos/people/000000000002.jpg')} />
-          <Photo src={require('../../photos/people/000000000003.jpg')} />
+          <Photo src={require('../../photos/people/00000000001.jpg')} />
+          <Photo src={require('../../photos/people/00000000002.jpg')} />
+          <Photo src={require('../../photos/people/00000000003.jpg')} />
         </Slider>
       </Page>
     );

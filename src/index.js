@@ -21,9 +21,9 @@ const paths = {
   home: '/',
   city: '/city',
   people: '/people',
-  studio: '/studio',
-  edition: '/edition',
-  abstract: '/abstract',
+  // studio: '/studio',
+  // edition: '/edition',
+  // abstract: '/abstract',
 };
 
 export const routes = [
@@ -62,18 +62,18 @@ ReactDOM.render(
               to: paths.city,
               text: 'город',
             },
-            {
-              to: paths.studio,
-              text: 'студия',
-            },
-            {
-              to: paths.edition,
-              text: 'издание',
-            },
-            {
-              to: paths.abstract,
-              text: 'абстракция',
-            },
+            // {
+            //   to: paths.studio,
+            //   text: 'студия',
+            // },
+            // {
+            //   to: paths.edition,
+            //   text: 'издание',
+            // },
+            // {
+            //   to: paths.abstract,
+            //   text: 'абстракция',
+            // },
           ]}
         />
         <main>

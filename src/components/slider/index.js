@@ -9,20 +9,28 @@ const cx = classnames.bind(styles);
 class Slider extends React.PureComponent {
   render() {
     const { props } = this;
+    const sliderWidth = 100 * props.children.length;
+    const slideWidth = 100 / props.children.length;
 
     return (
       <div className={styles.wrapper}>
         <Scrollbars
-          autoHide
+          autoHide={false}
           autoHideTimeout={200}
           renderTrackHorizontal={this.renderTrack}
           renderThumbHorizontal={this.renderThumb}
         >
-          <ul className={cx('slider', {
-            [`theme_${props.theme}`]: Boolean(props.theme),
-          })}>
+          <ul
+            style={{ width: `${sliderWidth}%` }}
+            className={cx('slider', {
+              [`theme_${props.theme}`]: Boolean(props.theme),
+            })}
+          >
             {React.Children.map(props.children, child => (
-              <li className={styles.slide}>
+              <li
+                style={{ width: `${slideWidth}%` }}
+                className={styles.slide}
+              >
                 {React.cloneElement(child, {
                   className: cx(child.props.className, styles.slideContent),
                 })}

@@ -1,17 +1,22 @@
 # gegege
 https://tsvetta.github.io/gegege/
 
-another fckng photographer's portfolio
+yet another fckng photographer's portfolio
 
+# FIX:
+
+* horizontal scrollbar
 
 # TODO:
 
+* центрирование фото после окончания скролла
 * contacts
 * main page?
 * city page
 * error page
-* static server
+* static server for photos
 * dinamic loading photos while scrolling
 * studio page
 * edition page?
 * abstract page?
+* CI: travis

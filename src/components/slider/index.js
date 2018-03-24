@@ -15,10 +15,12 @@ class Slider extends React.PureComponent {
     return (
       <div className={styles.wrapper}>
         <Scrollbars
-          autoHide={false}
+          universal
+          autoHide
           autoHideTimeout={200}
           renderTrackHorizontal={this.renderTrack}
           renderThumbHorizontal={this.renderThumb}
+          onWheel={this.handleWheel}
         >
           <ul
             style={{ width: `${sliderWidth}%` }}
@@ -40,6 +42,15 @@ class Slider extends React.PureComponent {
         </Scrollbars>
       </div>
     );
+  }
+
+  handleWheel(event) {
+    const { currentTarget, deltaX, deltaY } = event;
+    const delta = deltaX == 0 ? deltaY : deltaX;
+
+    currentTarget.firstChild.scrollLeft += delta;
+
+    event.preventDefault();
   }
 
   renderTrack(props) {

@@ -20,7 +20,7 @@ import styles from './common.css';
 const paths = {
   home: '/',
   city: '/city',
-  people: '/people',
+  // people: '/people',
   // studio: '/studio',
   // edition: '/edition',
   // abstract: '/abstract',
@@ -29,7 +29,7 @@ const paths = {
 export const routes = [
   {
     path: paths.home,
-    component: HomePage,
+    component: PeoplePage,
     exact: true,
   },
   {
@@ -39,10 +39,10 @@ export const routes = [
       theme: 'night',
     },
   },
-  {
-    path: paths.people,
-    component: PeoplePage,
-  },
+  // {
+  // path: paths.people,
+  // component: PeoplePage,
+  // },
   {
     component: ErrorPage,
   },
@@ -55,7 +55,7 @@ ReactDOM.render(
         <Navigation
           routes={[
             {
-              to: paths.people,
+              to: paths.home,
               text: 'человек',
             },
             {

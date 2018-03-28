@@ -7,10 +7,25 @@ import styles from './styles.css';
 const cx = classnames.bind(styles);
 
 class Slider extends React.PureComponent {
+  state = {
+    currentSlideIndex: 0,
+  };
+
+  slideWidth = 0;
+  slides = [];
+
+  setSlidesRefs = (slide) => {
+    if (this.slideWidth === 0) {
+      this.slideWidth = slide.clientWidth;
+    }
+
+    this.slides = this.slides.concat(slide);
+  }
+
   render() {
-    const { props } = this;
-    const sliderWidth = 100 * props.children.length;
-    const slideWidth = 100 / props.children.length;
+    const { props, state } = this;
+    const sliderWidthPercents = `${100 * props.children.length}%`;
+    const slideWidthPercents = `${100 / props.children.length}%`;
 
     return (
       <div className={styles.wrapper}>
@@ -21,16 +36,19 @@ class Slider extends React.PureComponent {
           renderTrackHorizontal={this.renderTrack}
           renderThumbHorizontal={this.renderThumb}
           onWheel={this.handleWheel}
+          onScroll={this.handleScroll}
+          onScrollStop={this.handleScrollStop}
         >
           <ul
-            style={{ width: `${sliderWidth}%` }}
+            style={{ width: sliderWidthPercents }}
             className={cx('slider', {
               [`theme_${props.theme}`]: Boolean(props.theme),
             })}
           >
-            {React.Children.map(props.children, child => (
+            {React.Children.map(props.children, (child) => (
               <li
-                style={{ width: `${slideWidth}%` }}
+                ref={this.setSlidesRefs}
+                style={{ width: slideWidthPercents }}
                 className={styles.slide}
               >
                 {React.cloneElement(child, {
@@ -51,6 +69,26 @@ class Slider extends React.PureComponent {
     currentTarget.firstChild.scrollLeft += delta;
 
     event.preventDefault();
+  }
+
+  handleScroll = (e) => {
+    const { scrollWidth, scrollLeft, firstChild } = e.target;
+    const slidesCount = this.slides.length;
+    const scrollRatio = scrollLeft / this.slideWidth;
+    const currentSlideIndex = Math.round(scrollRatio);
+
+    this.setState({ currentSlideIndex });
+  }
+
+  handleScrollStop = () => {
+    // to rerender even if slide haven't changed
+    this.forceUpdate(this.scrollToCurrentSlide);
+  }
+
+  scrollToCurrentSlide = () => {
+    const currentSlide = this.slides[this.state.currentSlideIndex];
+
+    currentSlide.scrollIntoView({ behavior: 'smooth' });
   }
 
   renderTrack(props) {

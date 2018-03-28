@@ -72,12 +72,12 @@ class Slider extends React.PureComponent {
   }
 
   handleScroll = (e) => {
-    const { scrollWidth, scrollLeft, firstChild } = e.target;
-    const slidesCount = this.slides.length;
+    const { scrollLeft } = e.target;
     const scrollRatio = scrollLeft / this.slideWidth;
-    const currentSlideIndex = Math.round(scrollRatio);
 
-    this.setState({ currentSlideIndex });
+    this.setState({
+      currentSlideIndex: Math.round(scrollRatio)
+    });
   }
 
   handleScrollStop = () => {

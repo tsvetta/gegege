@@ -8,7 +8,7 @@ yet another fckng photographer's portfolio
 * ~центрирование фото после окончания скролла~ (✅ для новых браузеров, в мобилах скорее всего не работает)
 * contacts
 * SSR
-* main page?
+* ~main page?~ страница с людьми поставлена на главную
 * city page
 * error page
 * static server for photos

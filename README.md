@@ -7,6 +7,7 @@ yet another fckng photographer's portfolio
 
 * центрирование фото после окончания скролла
 * contacts
+* SSR
 * main page?
 * city page
 * error page

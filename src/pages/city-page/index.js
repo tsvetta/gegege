@@ -8,7 +8,7 @@ class CityPage extends React.PureComponent {
   render() {
     return (
       <Page>
-        <Slider theme='night'>
+        <Slider>
           <Photo src={require('../../photos/city/000000000002.jpg')} />
           <Photo src={require('../../photos/city/000000000003.jpg')} />
           <Photo src={require('../../photos/city/000000000004.jpg')} />

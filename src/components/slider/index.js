@@ -1,7 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
-import { Scrollbars } from 'react-custom-scrollbars';
+import { withTheme } from '../../HOCs/with-theme';
+import Scroll from '../scroll';
 
 import styles from './styles.css';
 const cx = classnames.bind(styles);
@@ -28,47 +29,27 @@ class Slider extends React.PureComponent {
     const slideWidthPercents = `${100 / props.children.length}%`;
 
     return (
-      <div className={styles.wrapper}>
-        <Scrollbars
-          universal
-          autoHide
-          autoHideTimeout={200}
-          renderTrackHorizontal={this.renderTrack}
-          renderThumbHorizontal={this.renderThumb}
-          onWheel={this.handleWheel}
+      <div className={styles.slider}>
+        <Scroll
           onScroll={this.handleScroll}
           onScrollStop={this.handleScrollStop}
+          contentStyle={{ width: sliderWidthPercents }}
+          contentClassName={cx('sliderContent', { [`theme_${props.theme}`]: Boolean(props.theme) })}
         >
-          <ul
-            style={{ width: sliderWidthPercents }}
-            className={cx('slider', {
-              [`theme_${props.theme}`]: Boolean(props.theme),
-            })}
-          >
-            {React.Children.map(props.children, (child) => (
-              <li
-                ref={this.setSlidesRefs}
-                style={{ width: slideWidthPercents }}
-                className={styles.slide}
-              >
-                {React.cloneElement(child, {
-                  className: cx(child.props.className, styles.slideContent),
-                })}
-              </li>
-            ))}
-          </ul>
-        </Scrollbars>
+          {React.Children.map(props.children, (child) => (
+            <div
+              ref={this.setSlidesRefs}
+              style={{ width: slideWidthPercents }}
+              className={styles.slide}
+            >
+              {React.cloneElement(child, {
+                className: cx(child.props.className, styles.slideContent),
+              })}
+            </div>
+          ))}
+        </Scroll>
       </div>
     );
-  }
-
-  handleWheel(event) {
-    const { currentTarget, deltaX, deltaY } = event;
-    const delta = deltaX == 0 ? deltaY : deltaX;
-
-    currentTarget.firstChild.scrollLeft += delta;
-
-    event.preventDefault();
   }
 
   handleScroll = (e) => {
@@ -90,22 +71,10 @@ class Slider extends React.PureComponent {
 
     currentSlide.scrollIntoView({ behavior: 'smooth' });
   }
-
-  renderTrack(props) {
-    return (
-      <div {...props} className={styles.track} />
-    );
-  }
-
-  renderThumb(props) {
-    return (
-      <div {...props} className={styles.thumb} />
-    );
-  }
 }
 
 Slider.propTypes = {
   theme: PropTypes.oneOf(['day', 'night']),
 };
 
-export default Slider;
+export default withTheme(Slider);
